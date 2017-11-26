@@ -31,16 +31,17 @@ unsigned WINAPI TestThread(LPVOID arg)
 {
 	printf_s("Start Thread\n");
 
-	for (int i = 0; i < 100; i++)
+	for (int i = 0; i < 1000000; i++)
 	{
 		{
-			MyFastSpinLockGuard criticalSection(gMyLock, false);
+			MyFastSpinLockGuard criticalSection(gMyLock, true);
+			//gMyLock.EnterWriteLock();
 			gSum++;
-			printf_s("Tick\t");
+			//gMyLock.LeaveWriteLock();
 		}
 	}
 
-	printf_s("End Trhead\n");
+	printf_s("End Thread\n");
 
 	return 0;
 }

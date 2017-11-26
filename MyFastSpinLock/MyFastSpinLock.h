@@ -24,9 +24,9 @@ private:
 	enum LockType
 	{
 		LT_READ_FLAG = 0x1,
-		LT_READ_MASK = 0xFFFF,
-		LT_WRITE_FLAG = 0x10000,
-		LT_WRITE_MASK = 0xFFFF0000,
+		LT_READ_MASK = 0xFFFFF,
+		LT_WRITE_FLAG = 0x100000,
+		LT_WRITE_MASK = 0x7FF00000,
 	};
 
 	MyFastSpinLock(const MyFastSpinLock& rhs);
